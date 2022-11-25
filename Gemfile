@@ -78,3 +78,5 @@ gem "ffaker", "~> 2.21", :groups => [:development, :test]
 gem "sassc-rails", "~> 2.1"
 
 gem "hot-glue", "~> 0.5.3"
+
+gem "bootstrap", "~> 5.2"
