@@ -1,0 +1,20 @@
+<%= link_to "<i class='fa fa-arrow-circle-left  2x'></i> Back to list".html_safe, admin_conversations_path %>
+
+<%= turbo_frame_tag "conversation__#{@conversation.id}" do  %>
+
+  <div class="cell editable" style="position: relative;">
+
+    <% if @conversation.errors.any? %>
+      <%= render(partial: "admin/errors", locals: {resource: @conversation }) %>
+    <% end %>
+
+    <h2>Editing <%= @conversation.name %></h2>
+    <%= form_with model: @conversation, url: admin_conversation_path(@conversation) do |f| %>
+    <%=  render partial: "form",  locals: {:conversation => @conversation, f: f} %>
+    <% end %>
+
+  </div>
+
+<% end %>
+
+

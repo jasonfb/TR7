@@ -1,0 +1,6 @@
+
+<% byebug  %>
+<%= turbo_stream.replace "#{dom_id(@conversation)}" do %>
+  <%= Time.current %>
+  <%= render partial: "conversation", locals: {conversation: @conversation} %>
+<% end %>

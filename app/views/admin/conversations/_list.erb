@@ -1,0 +1,39 @@
+<%= turbo_frame_tag "conversations-list"   do %>
+  <div class="container-fluid scaffold-list">
+    
+      <h4>
+        CONVERSATIONS
+      </h4>
+    
+
+    <%= render partial: "admin/conversations/new_button", locals: {} %><br />
+
+    
+      
+        <div class="row scaffold-heading-row">
+          <div class='col-md-1'>Name</div>
+          
+
+          
+
+          <div class=' scaffold-col-heading scaffold-col-heading-buttons col-md-2' >
+
+          </div>
+        </div>
+      
+
+      <% if conversations.empty? %>
+    <div>
+        None
+    </div>
+      <% end %>
+      <% conversations.each do |conversation| %>
+        <%= render partial: 'admin/conversations/line', locals: {conversation: conversation}
+            .merge(defined?(nested_for) ? {nested_for: nested_for} : {})
+      
+        %>
+      <% end %>
+    <% if conversations.respond_to?(:total_pages) %><%= paginate(conversations) %> <% end %>
+  
+  </div>
+<% end %>

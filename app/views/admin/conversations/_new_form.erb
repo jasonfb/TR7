@@ -1,0 +1,9 @@
+<%= turbo_frame_tag "conversation-new" do %>
+<h3>
+  New CONVERSATION
+  </h3>
+  <%= form_with model:  conversation, url: admin_conversations_path, method: :post do  |f| %>
+    <%=  render partial: "admin/conversations/form",
+      locals: { conversation: conversation, f: f} %>
+  <% end %>
+<% end %>
