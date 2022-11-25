@@ -76,3 +76,5 @@ gem "factory_bot_rails", "~> 6.2", :groups => [:development, :test]
 gem "ffaker", "~> 2.21", :groups => [:development, :test]
 
 gem "sassc-rails", "~> 2.1"
+
+gem "hot-glue", "~> 0.5.3"
