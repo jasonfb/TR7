@@ -82,3 +82,5 @@ gem "hot-glue", "~> 0.5.3"
 gem "bootstrap", "~> 5.2"
 
 gem "font_awesome5_rails", "~> 1.5"
+
+gem "devise", "~> 4.8"
