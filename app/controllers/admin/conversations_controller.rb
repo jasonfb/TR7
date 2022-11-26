@@ -2,7 +2,6 @@ class Admin::ConversationsController < Admin::BaseController
   helper :hot_glue
   include HotGlue::ControllerHelper
 
-
   
   
   before_action :load_conversation, only: [:show, :edit, :update, :destroy]
