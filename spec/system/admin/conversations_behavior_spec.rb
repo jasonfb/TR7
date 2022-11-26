@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "interaction for Admin::ConversationsController", type: :feature do
   include HotGlue::ControllerHelper
-    #HOTGLUE-SAVESTART
+  #HOTGLUE-SAVESTART
   #HOTGLUE-END
   
 
