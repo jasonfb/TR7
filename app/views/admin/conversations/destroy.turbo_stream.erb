@@ -1,3 +1,3 @@
-<%= turbo_stream.replace "conversations-list" + "" do %>
+<%= turbo_stream.replace "admin__conversations-list" + "" do %>
   <%= render partial: "list", locals: {conversations: @conversations } %>
 <% end %>

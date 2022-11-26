@@ -1,9 +1,9 @@
 <% if @conversation.errors.none? %>
-  <%= turbo_stream.replace "conversations-list" + "" do %>
+  <%= turbo_stream.replace "admin__conversations-list" + "" do %>
   <%= render partial: "list", locals: {conversations: @conversations} %>
   <% end %>
   <% end %>
-  <%= turbo_stream.replace "conversation-new" do %>
+  <%= turbo_stream.replace "admin__conversation__conversation-new" do %>
   <% if @conversation.errors.none? %>
   <%= render partial: "new_button", locals: {} %>
   <% else %>

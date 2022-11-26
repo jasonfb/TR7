@@ -77,7 +77,7 @@ gem "ffaker", "~> 2.21", :groups => [:development, :test]
 
 gem "sassc-rails", "~> 2.1"
 
-gem "hot-glue", "~> 0.5.3"
+gem "hot-glue", path: "/Users/jason/Work/Hot_Glue/hot-glue-private"
 
 gem "bootstrap", "~> 5.2"
 
