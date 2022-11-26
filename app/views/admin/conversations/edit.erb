@@ -1,4 +1,5 @@
 <%= link_to "<i class='fa fa-arrow-circle-left  2x'></i> Back to list".html_safe, admin_conversations_path %>
+
 <%= turbo_frame_tag "conversation__#{@conversation.id}" do  %>
 
   <div class="cell editable" style="position: relative;">
