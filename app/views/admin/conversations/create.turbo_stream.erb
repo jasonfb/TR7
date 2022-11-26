@@ -1,6 +1,7 @@
 <% if @conversation.errors.none? %>
-  <%= turbo_stream.replace "admin__conversations-list" + "" do %>
-  <%= render partial: "list", locals: {conversations: @conversations} %>
+  <%= turbo_stream.replace "admin__conversations-list" do %>
+    <% logger.debug("rendering with " + {conversations: @conversations, page: @page}.to_json) %>
+  <%= render partial: "list", locals: {conversations: @conversations, page: @page} %>
   <% end %>
   <% end %>
   <%= turbo_stream.replace "admin__conversation__conversation-new" do %>

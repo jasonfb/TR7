@@ -1,3 +1,2 @@
-<%= turbo_stream.replace "admin__conversations-list" + "" do %>
-  <%= render partial: "list", locals: {conversations: @conversations } %>
+<%= turbo_stream.remove "admin__" + dom_id(@conversation) do %>
 <% end %>

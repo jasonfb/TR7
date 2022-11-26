@@ -12,8 +12,8 @@ class Admin::ConversationsController < Admin::BaseController
   end
   
 
-  def load_all_conversations 
-    @conversations = ( Conversation.page(params[:page]))  
+  def load_all_conversations(page = params[:page] || 1)
+    @conversations = ( Conversation.page(page))
   end
 
   def index
@@ -33,7 +33,12 @@ class Admin::ConversationsController < Admin::BaseController
 
     if @conversation.save
       flash[:notice] = "Successfully created #{@conversation.name}"
-      load_all_conversations
+
+
+      @page = (Conversation.count() / Conversation.default_per_page)
+      @page += 1 if (Conversation.count() % Conversation.default_per_page) > 0
+
+      load_all_conversations(@page)
       render :create
     else
       flash[:alert] = "Oops, your conversation could not be created. #{@hawk_alarm}"
@@ -63,6 +68,7 @@ class Admin::ConversationsController < Admin::BaseController
 
   def destroy
     begin
+
       @conversation.destroy
     rescue StandardError => e
       flash[:alert] = "Conversation could not be deleted."
