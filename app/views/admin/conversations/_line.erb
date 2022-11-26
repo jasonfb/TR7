@@ -1,5 +1,4 @@
 <%= turbo_stream_from conversation  %>
-
 <%= turbo_frame_tag "conversation__#{ conversation.id }" do  %>
   <div class='row scaffold-row' data-id='<%= conversation.id %>' data-edit='false'>
     <%= render partial: 'admin/conversations/show', locals: { conversation: conversation } %>
