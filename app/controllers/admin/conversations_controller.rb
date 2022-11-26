@@ -6,18 +6,19 @@ class Admin::ConversationsController < Admin::BaseController
   
   before_action :load_conversation, only: [:show, :edit, :update, :destroy]
   after_action -> { flash.discard }, if: -> { request.format.symbol ==  :turbo_stream }
+ 
   def load_conversation
     @conversation = (Conversation.find(params[:id]))
   end
   
-  def load_all_conversations
-    @conversations = ( Conversation.page(params[:page]))
+
+  def load_all_conversations 
+    @conversations = ( Conversation.page(params[:page]))  
   end
 
   def index
     load_all_conversations
   end
-
 
   def new 
     @conversation = Conversation.new()
@@ -47,7 +48,10 @@ class Admin::ConversationsController < Admin::BaseController
 
   def update
     modified_params = modify_date_inputs_on_params(conversation_params)
+      
+
     if @conversation.update(modified_params)
+      
       flash[:notice] = (flash[:notice] || "") << "Saved #{@conversation.name}"
       flash[:alert] = @hawk_alarm if @hawk_alarm
       render :update
